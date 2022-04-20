@@ -84,6 +84,37 @@
         },
         "test": {
           "builder": "@angular-builders/jest:run"
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "tic-tac-toe-angular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tic-tac-toe-angular:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "tic-tac-toe-angular:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tic-tac-toe-angular:serve:production"
+            }
+          }
         }
       }
     }
