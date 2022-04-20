@@ -1,20 +1,21 @@
 import { render, screen } from '@testing-library/angular';
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
-describe('Board', () => {
-  it('has 9 cells', async () => {
-    const { container } = await render(AppComponent);
+describe('App', () => {
+  it('has a board', async () => {
+    const { container } = await render(AppComponent, { imports: [AppModule] });
 
-    const cells = container.querySelectorAll('.board .cell');
+    const board = container.querySelector('.board');
 
-    expect(cells.length).toBe(9);
+    expect(board).toBeInTheDocument();
   });
 
-  it('starts with empty cells', async () => {
-    const { container } = await render(AppComponent);
+  it('has a turn', async () => {
+    const { container } = await render(AppComponent, { imports: [AppModule] });
 
-    const cells = container.querySelectorAll('.board .cell');
+    const turn = container.querySelector('.turn');
 
-    cells.forEach((cell) => expect(cell.className).toContain('empty'));
+    expect(turn).toBeInTheDocument();
   });
 });

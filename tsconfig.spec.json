@@ -6,8 +6,10 @@
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "types": [
+      "node",
       "jest",
-      "cypress"
+      "cypress",
+      "@testing-library/jest-dom"
     ]
   },
   "files": [
