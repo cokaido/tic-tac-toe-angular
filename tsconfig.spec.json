@@ -3,8 +3,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
     "types": [
-      "jasmine"
+      "jest",
+      "cypress"
     ]
   },
   "files": [
