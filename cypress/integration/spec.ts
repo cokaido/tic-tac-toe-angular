@@ -1,6 +1,9 @@
-describe('My First Test', () => {
-  it('Visits the initial project page', () => {
+describe('Tic tac toe', () => {
+  it('Starts with an empty board', () => {
     cy.visit('/');
-    cy.contains('tic-tac-toe-angular app is running!');
+
+    cy.get('.board').within(() => {
+      cy.get('.cell').should('have.class', 'empty');
+    });
   });
 });
